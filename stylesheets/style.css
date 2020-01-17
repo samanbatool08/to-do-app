@@ -1,10 +1,50 @@
-/* #main {
-    height: 100vh;
-    width: 100vw;
-    background-color: purple
-} */
 
 body {
     display: grid;
-    grid-template-columns: 4fr 6fr
+    grid-template-columns: 5fr 5fr;
+    background: #21A0A0;
+    /* background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.worldatlas.com%2Farticles%2Fthe-highest-mountains-in-india.html&psig=AOvVaw2QcmDVtHP4z4lFV5lALUDH&ust=1579385149738000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDb36jSi-cCFQAAAAAdAAAAABAI"); */
+    font-weight: bolder;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+#left-side {
+    padding-left: 20px;
+    /* text-align: left; */
+}
+
+/* #list-panel {
+    padding-left: 20px;
+    text-align: left
+} */
+
+h2 {
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+h3 {
+    color: #ffffff;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+h4 {
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+input {
+    border-radius: 5px;
+    min-width: 30%;
+    padding: 8px;
+    border-width: 5px;
+    border: rgb(7, 50, 56);
+    
+}
+
+li {
+    text-transform: capitalize;
+    color: #ffffff;
 }
