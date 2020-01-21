@@ -29,25 +29,40 @@ document.addEventListener("DOMContentLoaded", function() {
         }) // ends fetch
         .then(response => response.json())
         .then(task => {
-            // console.log(task)
             let li = document.createElement('li')
-            li.dataset.id = task.id
+            li.dataset.id = parseInt(task.id)
             li.innerText = task.taskname
             taskUl.appendChild(li)
         }) // end of second .then
     }) // end of form event listener
 
 
-    taskUl.addEventListener('click', function (e){
-        let taskTitle = document.createElement('h1')
-        let taskDesc = document.createElement('p')
-        
-        taskTitle.innerText = e.target.innerText
-        // taskDesc.innerText = 
-        if (showPanel.hasChildNodes) {
-            showPanel.removeChild
+    taskUl.addEventListener('click', function(e){
+
+        console.log(e.target.data-id.id)
+
+        fetch("http://localhost:3000/tasks")
+        .then(response => response.json())
+        .then(taskData => taskData.forEach(task => {
+           return task.find(element => element.id === e.target.data.id)
+        }))
+
+        function showTask(task) {
+            let taskDiv = document.createElement('div')
+            let taskTitle = document.createElement('h2')
+            let taskDesc = document.createElement('p')
+
+            // taskTitle.innerText = task.
+            
         }
-        showPanel.appendChild(taskTitle)
+        
+
+    
+    // function findEmployeeByFirstName(srcArray, firstName) {
+
+    // let soughtEmployee = srcArray.find(element => element.firstName === firstName)
+    // return soughtEmployee
+    // }
 
 
     })// ends event listeners for li
