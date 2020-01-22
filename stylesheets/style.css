@@ -3,7 +3,6 @@ body {
     display: grid;
     grid-template-columns: 5fr 5fr;
     background: #21A0A0;
-    /* background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.worldatlas.com%2Farticles%2Fthe-highest-mountains-in-india.html&psig=AOvVaw2QcmDVtHP4z4lFV5lALUDH&ust=1579385149738000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDb36jSi-cCFQAAAAAdAAAAABAI"); */
     font-weight: bolder;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
@@ -12,6 +11,11 @@ body {
 #left-side {
     padding-left: 20px;
     /* text-align: left; */
+}
+
+#image-id {
+    max-width: 30em;
+    opacity: 0.8;
 }
 
 /* #list-panel {
