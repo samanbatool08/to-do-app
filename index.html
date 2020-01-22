@@ -10,31 +10,38 @@
 </head>
 
 <body>
-    <header> Sample Header </header>
-    <div id="left-side">
-        <h2>Create A Task</h2>
-        <form id="form">
-            <input type="text" name="username" id="username" placeholder="Username"><br><br>
-            <input type="text" name="taskname" id="taskname" placeholder="Task"><br><br>
-            <!-- <textarea name="descripton" cols="32" rows="4" placeholder="Task Description"></textarea> -->
-            <input type="text" name="descripton" id="task-desc" placeholder="Task Description">
-            </><br>
-            <br>
-            <input type="submit" value="Submit">
-            <!-- <button id="enter"><i class="fas fa-pencil-alt"></i></button> -->
-        </form>
-        <br><br>
-        <div id="list-panel">
+    <header id="header"> 
+        <button id=login-button>Log In</button>
+    </header>
+    <div id="main">
 
-            <ul id="task-list">
-                <h3>Here are your tasks</h3>
-            </ul>
+        <div id="left-side">
+            <h2>Create A Task</h2>
+            <form id="form">
+                <input type="text" name="username" id="username" placeholder="Username"><br><br>
+                <input type="text" name="taskname" id="taskname" placeholder="Task"><br><br>
+                <!-- <textarea name="descripton" cols="32" rows="4" placeholder="Task Description"></textarea> -->
+                <input type="text" name="descripton" id="task-desc" placeholder="Task Description">
+                </><br>
+                <br>
+                <input type="submit" value="Submit">
+                <!-- <button id="enter"><i class="fas fa-pencil-alt"></i></button> -->
+            </form>
+            <br><br>
+            <div id="list-panel">
+    
+                <ul id="task-list">
+                    <h3>Here are your tasks</h3>
+                </ul>
+            </div>
         </div>
-    </div>
+    
+        <div id="show-panel">
+            <h3> </h3>
+            <img id="image-id" src="https://upload.wikimedia.org/wikipedia/commons/1/12/We_Can_Do_It%21.jpg">
+        </div>
 
-    <div id="show-panel">
-        <h3> </h3>
-        <img id="image-id" src="https://upload.wikimedia.org/wikipedia/commons/1/12/We_Can_Do_It%21.jpg">
+
     </div>
 
 

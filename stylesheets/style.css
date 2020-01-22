@@ -1,11 +1,27 @@
 
 body {
-    display: grid;
-    grid-template-columns: 5fr 5fr;
+    height: 100%;
+    width: 100%;
     background: #21A0A0;
     font-weight: bolder;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#header {
+    padding: 15px;
+    color: #ffffff;
+    /* background: rgb(15, 78, 78); */
+    background-color: rgb(34, 58, 83);
+    height: 30px;
+}
+
+#login-button {
     
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
 }
 
 #left-side {
