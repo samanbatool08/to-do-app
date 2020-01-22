@@ -16,20 +16,27 @@ document.addEventListener("DOMContentLoaded", function() {
                     // if (username === "") {
                     //     alert("Username must be filled out");
                     //     return false
-                    //         // e.target.reset()
+
                     // }
 
                     if (taskname === "") {
                         alert("Task name must be filled out");
                         return false
+
                             // e.target.reset()
+
                     }
 
                     if (description === "") {
                         alert("Task description must be filled out");
                         return false
+
                             // e.target.reset()
                     } else {
+
+                    }
+                    else {
+
                         let taskData = {
                             "username": username,
                             "taskname": taskname,
@@ -67,8 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (e.target.className === 'task-li') {
                     let id = parseInt(e.target.dataset.id)
 
-                    console.log(typeof id)
-
                     fetch(`http://localhost:3000/tasks/${id}`)
 
                     .then(response => response.json())
@@ -80,16 +85,31 @@ document.addEventListener("DOMContentLoaded", function() {
                     let taskDiv = document.createElement('div')
                     let taskTitle = document.createElement('h2')
                     let taskDesc = document.createElement('p')
+                    let deleteButton = document.createElement('button')
+                    deleteButton.dataset.id = 'delete-btn'
 
                     taskTitle.innerText = task.taskname
                     taskDesc.innerText = task.description
+                    deleteButton.innerText = "Delete"
+
                     showPanel.innerHTML = ""
                     taskDiv.appendChild(taskTitle)
                     taskDiv.appendChild(taskDesc)
+                    taskDiv.appendChild(deleteButton)
                     showPanel.appendChild(taskDiv)
 
                 } // ends showtask function
             }) // ends event listeners for li
+
+
+        // let deleteButton = document.getElementById("delete-btn")
+
+        // console.log(deleteButton)
+        
+        // deleteButton.addEventListener('click', function(e) {
+        //     console.log(e.target)
+        //     console.log("clicking delete button")
+        // })
 
         const loginBtn = document.getElementById("login-button")
         const modal = document.getElementById("myModal")
@@ -98,11 +118,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         loginBtn.onclick = function() {
                 modal.style.display = "block";
-            } // ends login button eventlistener
+        } // ends login button eventlistener
 
         modalClose.onclick = function() {
                 modal.style.display = "none";
-            } // ends modal close eventlistener
+        } // ends modal close eventlistener
 
 
         window.onclick = function(event) {
