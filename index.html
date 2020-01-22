@@ -10,15 +10,29 @@
 </head>
 
 <body>
-    <header id="header"> 
+    <header id="header">
         <button id=login-button>Log In</button>
     </header>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Welcome! Please log in to start creating your tasks!</p>
+            <form id="login-form">
+                <input type="text" name="username" id="username" placeholder="Username"><br><br>
+                <input type="submit" value="Log In">
+                <!-- <button id="enter"><i class="fas fa-pencil-alt"></i></button> -->
+            </form>
+        </div>
+    </div>
+
     <div id="main">
 
         <div id="left-side">
             <h2>Create A Task</h2>
             <form id="form" action="/tasks" onsubmit="return validateForm()" method="post">
-                <input type="text" name="username" id="username" placeholder="Username"><br><br>
+                <!-- <input type="text" name="username" id="username" placeholder="Username"><br><br> -->
                 <input type="text" name="taskname" id="taskname" placeholder="Task"><br><br>
                 <!-- <textarea name="descripton" cols="32" rows="4" placeholder="Task Description"></textarea> -->
                 <input type="text" name="descripton" id="task-desc" placeholder="Task Description">
@@ -29,13 +43,13 @@
             </form>
             <br><br>
             <div id="list-panel">
-    
+
                 <ul id="task-list">
                     <h3>Here are your tasks</h3>
                 </ul>
             </div>
         </div>
-    
+
         <div id="show-panel">
             <h3> </h3>
             <img id="image-id" src="https://upload.wikimedia.org/wikipedia/commons/1/12/We_Can_Do_It%21.jpg">
