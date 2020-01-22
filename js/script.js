@@ -64,9 +64,26 @@ document.addEventListener("DOMContentLoaded", function() {
                     showPanel.appendChild(taskDiv)
 
                 } // ends showtask function
-
-
             }) // ends event listeners for li
 
+        const loginBtn = document.getElementById("login-button")
+        const modal = document.getElementById("myModal")
+        const modalClose = document.getElementsByClassName("close")[0]
+
+
+        loginBtn.onclick = function() {
+                modal.style.display = "block";
+            } // ends login button eventlistener
+
+        modalClose.onclick = function() {
+                modal.style.display = "none";
+            } // ends modal close eventlistener
+
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
     }) // end of main DOMContentLoaded function
