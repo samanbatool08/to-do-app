@@ -6,35 +6,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
         form.addEventListener("submit", function(e) {
                 e.preventDefault()
+                
 
                 let username = document.getElementById("username").value
                 let taskname = document.getElementById("taskname").value
                 let description = document.getElementById("task-desc").value
 
-                e.target.reset()
+                function validateForm() {
+                    if (username === "") {
+                        alert("Username must be filled out");
+                        return false
+                        // e.target.reset()
+                    }
 
-                let taskData = {
-                    "username": username,
-                    "taskname": taskname,
-                    "description": description
+                    if (taskname === ""){
+                        alert("Task name must be filled out");
+                        return false
+                        // e.target.reset()
+                    }
+
+                    if (description === ""){
+                        alert("Task description must be filled out");
+                        return false
+                        // e.target.reset()
+                    }
+                    else {
+                        let taskData = {
+                            "username": username,
+                            "taskname": taskname,
+                            "description": description
+                        }
+        
+                        fetch("http://localhost:3000/tasks", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    accept: "application/json"
+                                },
+                                body: JSON.stringify(taskData)
+                            }) // ends fetch
+                            .then(response => response.json())
+                            .then(task => {
+                                let li = document.createElement('li')
+                                li.dataset.id = parseInt(task.id)
+                                li.className = "task-li"
+                                li.innerText = task.taskname
+                                taskUl.appendChild(li)
+                            }) // end of second .then
+                        
+                    }
                 }
 
-                fetch("http://localhost:3000/tasks", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            accept: "application/json"
-                        },
-                        body: JSON.stringify(taskData)
-                    }) // ends fetch
-                    .then(response => response.json())
-                    .then(task => {
-                        let li = document.createElement('li')
-                        li.dataset.id = parseInt(task.id)
-                        li.className = "task-li"
-                        li.innerText = task.taskname
-                        taskUl.appendChild(li)
-                    }) // end of second .then
+                validateForm()
+
+                e.target.reset()
+
             }) // end of form event listener
 
 

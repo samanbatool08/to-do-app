@@ -17,7 +17,7 @@
 
         <div id="left-side">
             <h2>Create A Task</h2>
-            <form id="form">
+            <form id="form" action="/tasks" onsubmit="return validateForm()" method="post">
                 <input type="text" name="username" id="username" placeholder="Username"><br><br>
                 <input type="text" name="taskname" id="taskname" placeholder="Task"><br><br>
                 <!-- <textarea name="descripton" cols="32" rows="4" placeholder="Task Description"></textarea> -->
