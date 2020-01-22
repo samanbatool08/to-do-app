@@ -6,37 +6,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
         form.addEventListener("submit", function(e) {
                 e.preventDefault()
-                
 
-                let username = document.getElementById("username").value
+
+                // let username = document.getElementById("username").value
                 let taskname = document.getElementById("taskname").value
                 let description = document.getElementById("task-desc").value
 
                 function validateForm() {
-                    if (username === "") {
-                        alert("Username must be filled out");
-                        return false
-                        // e.target.reset()
-                    }
+                    // if (username === "") {
+                    //     alert("Username must be filled out");
+                    //     return false
+                    //         // e.target.reset()
+                    // }
 
-                    if (taskname === ""){
+                    if (taskname === "") {
                         alert("Task name must be filled out");
                         return false
-                        // e.target.reset()
+                            // e.target.reset()
                     }
 
-                    if (description === ""){
+                    if (description === "") {
                         alert("Task description must be filled out");
                         return false
-                        // e.target.reset()
-                    }
-                    else {
+                            // e.target.reset()
+                    } else {
                         let taskData = {
                             "username": username,
                             "taskname": taskname,
                             "description": description
                         }
-        
+
                         fetch("http://localhost:3000/tasks", {
                                 method: "POST",
                                 headers: {
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 li.innerText = task.taskname
                                 taskUl.appendChild(li)
                             }) // end of second .then
-                        
+
                     }
                 }
 
@@ -111,5 +110,57 @@ document.addEventListener("DOMContentLoaded", function() {
                 modal.style.display = "none";
             }
         }
+
+        let loginSubmit = document.getElementById("login-submit")
+
+        loginSubmit.addEventListener('click', function(e) {
+                e.preventDefault()
+                console.log(e.target)
+                username = document.getElementById("username").value
+
+                let loginData = {
+                    "username": username
+                }
+
+                fetch("http://localhost:3000/users", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            accept: "application/json"
+                        },
+                        body: JSON.stringify(loginData)
+                    }) // ends fetch
+                    // .then(response => response.json())
+                    // .then(allUsers => {
+                    //     console.log(allUsers)
+                    // }) // ends second .then
+
+
+
+
+
+
+
+                // fetch("http://localhost:3000/tasks", {
+                //         method: "POST",
+                //         headers: {
+                //             "Content-Type": "application/json",
+                //             accept: "application/json"
+                //         },
+                //         body: JSON.stringify(loginData)
+                //     }) // ends fetch for login
+                //     .then(response => response.json())
+                //     .then(username =>
+                //         console.log(username.tasks),
+                //         loginBtn.innerText = `Welcome, ${username}`,
+                //         modal.style.display = "none"
+
+                //     )// ends .then
+
+
+
+
+            }) // ending login eventlistener
+
 
     }) // end of main DOMContentLoaded function
