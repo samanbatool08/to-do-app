@@ -175,33 +175,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 }) //ends .then
         } //ends usertasks function
 
-
-
+        
         showPanel.addEventListener('click', function(e) {
+           
+            if (e.target.className === "delete-btn") {
 
-                if (e.target.className === "delete-btn") {
-
-                    let targetButton = e.target
-                    let id = parseInt(targetButton.dataset.id)
-
-                    fetch(`http://localhost:3000/tasks/${id}`, {
-                        method: "DELETE"
-                    })
-
-                    targetButton.parentNode.remove()
-                    let task = document.getElementsByClassName(id)[0]
-                    task.remove()
-                }
-            }) // end of showPanel event listener
-
-
-
-
-
-
-
-
-
-
+                let targetButton = e.target
+                let id = parseInt(targetButton.dataset.id)
+                
+                fetch(`http://localhost:3000/tasks/${id}`, {
+                    method: "DELETE"
+                })
+               
+                targetButton.parentNode.remove() 
+                let task = document.getElementsByClassName(id)[0]
+                task.remove()
+            }
+        }) // end of showPanel event listener
 
     }) // end of main DOMContentLoaded function
