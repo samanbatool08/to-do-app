@@ -173,8 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }) //ends .then
         } //ends usertasks function
-
-
         
         showPanel.addEventListener('click', function(e) {
            
@@ -192,15 +190,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 task.remove()
             }
         }) // end of showPanel event listener
-
-
-
-
-
-
-
-
-
-
-
     }) // end of main DOMContentLoaded function
