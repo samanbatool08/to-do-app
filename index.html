@@ -22,7 +22,6 @@
             <form id="login-form" onsubmit="return validateUser()">
                 <input type="text" name="username" id="username" placeholder="Username"><br><br>
                 <input type="submit" id="login-submit" value="Log In">
-                <!-- <button id="enter"><i class="fas fa-pencil-alt"></i></button> -->
             </form>
         </div>
     </div>
@@ -32,14 +31,11 @@
         <div id="left-side">
             <h2 id="create">Create A Task</h2>
             <form id="form" action="/tasks" onsubmit="return validateForm()" method="post">
-                <!-- <input type="text" name="username" id="username" placeholder="Username"><br><br> -->
                 <input type="text" name="taskname" id="taskname" placeholder="Task"><br><br>
-                <!-- <textarea name="descripton" cols="32" rows="4" placeholder="Task Description"></textarea> -->
                 <input type="text" name="descripton" id="task-desc" placeholder="Details">
-                </><br>
+                <br>
                 <br>
                 <input type="submit" id="submit-button" value="Submit">
-                <!-- <button id="enter"><i class="fas fa-pencil-alt"></i></button> -->
             </form>
             <br><br>
             <div id="list-panel">

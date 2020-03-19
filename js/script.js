@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const form = document.getElementById("form")
         const taskUl = document.getElementById("task-list")
+        const leftSideDiv = document.getElementById("left-side")
         const showPanel = document.getElementById("show-panel")
+
+        leftSideDiv.style.display = "none";
 
         form.addEventListener("submit", function(e) {
                 e.preventDefault()
@@ -125,7 +128,8 @@ document.addEventListener("DOMContentLoaded", function() {
         loginSubmit.addEventListener('click', function(e) {
                 e.preventDefault()
                 modal.style.display = "none";
-                let listDiv = document.getElementById('list-panel')
+                let listDiv = document.getElementById('list-panel');
+                leftSideDiv.style.display = "block";
                 listDiv.style.display = "block";
 
 
